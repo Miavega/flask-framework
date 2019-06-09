@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- BOOTSTRAP 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- BOOTSWATCH CDN PARA ESTILIZAR BOOTSTRAP -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+    <!-- FONTAWESOME 4 CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- CSS PERSONALIZADO -->
+    <link rel="stylesheet" href="{{ url_for('css.static', filename='main.css') }}">
+
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <img src="" alt="">
+                Inicio
+            </a>
+        </div>
+    </nav>
+
+    <div class="container p-4">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+</body>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+<!-- CÓDIGO PERSONALIZADO -->
+<script src="{{ url_for('js.static', filename='main.js') }}"></script>
+
+</html>
